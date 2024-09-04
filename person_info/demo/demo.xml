@@ -1,0 +1,10 @@
+<odoo>
+    <record id="demo_person_1" model="person.info">
+        <field name="name">John Doe</field>
+        <field name="age">30</field>
+    </record>
+    <record id="demo_person_2" model="person.info">
+        <field name="name">Jane Smith</field>
+        <field name="age">25</field>
+    </record>
+</odoo>

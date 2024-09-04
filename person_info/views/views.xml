@@ -1,0 +1,27 @@
+<!-- views/views.xml -->
+<odoo>
+    <!-- Define the tree view for person.info -->
+    <record id="view_person_info_tree" model="ir.ui.view">
+        <field name="name">person.info.tree</field>
+        <field name="model">person.info</field>
+        <field name="arch" type="xml">
+            <tree string="Persons">
+                <field name="name"/>
+                <field name="age"/>
+                <!-- Add other fields here -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- Define the action that uses the view -->
+    <record id="action_person_info" model="ir.actions.act_window">
+        <field name="name">Persons</field>
+        <field name="res_model">person.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_person_info_tree"/>
+    </record>
+
+    <!-- Define the menu item -->
+    <menuitem id="menu_person_info_root" name="Person Info" sequence="10"/>
+    <menuitem id="menu_person_info" name="Persons" parent="menu_person_info_root" action="action_person_info"/>
+</odoo>
